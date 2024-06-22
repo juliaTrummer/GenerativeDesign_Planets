@@ -1,3 +1,10 @@
+/*
+Autors: Trummer Julia, Trummer Melina, Alina Schweighofer, Maria Laimer
+Title: Mars Weather Visualisation Part 1
+Date: 22 June 2024
+VO: Generative Design 2 
+*/ 
+
 class Orbit {
     float angle = 0;
     float speed = 0.01;
@@ -11,11 +18,11 @@ class Orbit {
         this.speed = orbitalSpeed / 1000;
         this.orbitColor = orbitColor;
         this.coordinates = new ArrayList<PVector>();
-        calcPointsOnOrbit(); // Calculate points when the object is created
+        calcPointsOnOrbit();
     }
 
     Orbit(float orbitWidth, float orbitHeight, float orbitalSpeed) {
-        this(orbitWidth, orbitHeight, orbitalSpeed, color(253, 266, 182)); // Default color
+        this(orbitWidth, orbitHeight, orbitalSpeed, color(253, 266, 182));
     }
 
     public void createOrbit(PGraphics planetOrbitLayer) {

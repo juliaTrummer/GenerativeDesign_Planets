@@ -1,3 +1,10 @@
+/*
+Autors: Trummer Julia, Trummer Melina, Alina Schweighofer, Maria Laimer
+Title: Mars Weather Visualisation Part 1
+Date: 22 June 2024
+VO: Generative Design 2 
+*/ 
+
 class TimeLine{
     
     int totalSections = 8;

@@ -1,6 +1,9 @@
 /*
-Autor: Trummer Julia, Trummer Melina, 
-*/
+Autors: Trummer Julia, Trummer Melina, Alina Schweighofer, Maria Laimer
+Title: Mars Weather Visualisation Part 1
+Date: 22 June 2024
+VO: Generative Design 2 
+*/ 
 
 PGraphics planetOrbitLayer;
 PGraphics background;
@@ -21,11 +24,12 @@ color[] orbitColors = {baseColor, baseColor, baseColor, color(182, 108, 73), bas
 color startColor = color(15, 17, 15);
 color endColor = color(81, 66, 58);
 int numSteps = 18;
-float stepHeight;
 int iteration = 0;
 int circleRadius = 10;
 int solCounter = 0;
+float stepHeight;
 
+//This Code was improved by ChatGPT -> For original code please contact: julia.trummer@edu.fh-joanneum.at
 void setup() {
     fullScreen();
     stepHeight = height / float(numSteps);
@@ -59,13 +63,14 @@ void setup() {
 
 void draw() {
     image(background, 0, 0);
-    drawPlanets();
+    createPlanets();
     updateIteration();
     updateSolCounter();
     textInfo.createTextLeftBottomCorner(solCounter);
 }
 
-void drawPlanets() {
+//Creates planets as circles in our solarsystem
+void createPlanets() {
     circle(75 + iteration / 10, height - 100, 10);
     fill(253, 266, 182);
     noStroke();
@@ -85,6 +90,8 @@ void drawPlanets() {
       }
 }
 
+//Only goes through 1/4 of the Orbit, used just for example reasons
+//TODO: Improve that planets orbit the whole ellipse
 void updateIteration() {
   if(iteration >= 1600) {
           iteration = 0;
@@ -93,12 +100,14 @@ void updateIteration() {
   }
 }
 
+//Left bottom Text: SOL counter gets upated in relation to the iteration.
 void updateSolCounter() {
   if(iteration % 16 == 0) {
       solCounter = iteration / 16;
   }
 }
 
+//Idea from: https://processing.org/reference/lerpColor_.html
 void generateBackground() {
     for (int i = 0; i < numSteps; i++) {
         float t = map(i, 0, numSteps - 1, 0, 1);

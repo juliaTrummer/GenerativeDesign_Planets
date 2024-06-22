@@ -1,12 +1,16 @@
-// forum.processing.org/two/discussion/8119/
-// dividing-a-circle-into-rings-of-equal-area-howto
+/*
+Autors: Trummer Julia, Trummer Melina, Alina Schweighofer, Maria Laimer
+Title: Mars Weather Visualisation Part 1
+Date: 22 June 2024
+VO: Generative Design 2 
+*/ 
 
 class Sun{
 
     int time;
     color timeColor;
-    float diameter = 79;  // Initial diameter of the circle
-    float strokeWidth = 5;  // Initial stroke weight
+    float diameter = 79; 
+    float strokeWidth = 5; 
     float growthRate = 20;  
 
     Sun(int time){
